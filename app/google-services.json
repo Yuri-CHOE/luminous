@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "473630540176",
+    "project_id": "luminous-9763d",
+    "storage_bucket": "luminous-9763d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473630540176:android:cf3dfb5f7957d0da11f315",
+        "android_client_info": {
+          "package_name": "com.example.luminous"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473630540176-s3vcdrasoia3mvelak9qug6q5pimq24b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.luminous",
+            "certificate_hash": "47894498eab70dde72ad9c51059045ff8a8ba335"
+          }
+        },
+        {
+          "client_id": "473630540176-gs0c79dgj2jmj3dkqu97sqoujdl2u2rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBERnX-9DkuebWHv6cZYOgN7gwZWWYt_aY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473630540176-gs0c79dgj2jmj3dkqu97sqoujdl2u2rp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
