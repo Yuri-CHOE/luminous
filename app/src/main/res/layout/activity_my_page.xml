@@ -15,7 +15,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/MyPageTopBar"
+        app:srcCompat="@drawable/mypagetopbar"
         tools:ignore="VectorDrawableCompat" />
 
     <ImageView
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_profileMenu"
-        app:srcCompat="@drawable/MenuBG"
+        app:srcCompat="@drawable/menubg"
         tools:ignore="VectorDrawableCompat" />
 
     <ImageView
@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/iv_MenuBG_1"
         app:layout_constraintStart_toStartOf="@+id/iv_MenuBG_1"
         app:layout_constraintTop_toTopOf="@+id/iv_MenuBG_1"
-        app:srcCompat="@drawable/Profile"
+        app:srcCompat="@drawable/profilecircle"
         tools:ignore="VectorDrawableCompat" />
 
     <ImageView
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="@+id/iv_MenuBG_1"
         app:layout_constraintStart_toEndOf="@+id/iv_profile"
         app:layout_constraintTop_toTopOf="@+id/iv_MenuBG_1"
-        app:srcCompat="@drawable/Bar"
+        app:srcCompat="@drawable/bar"
         tools:ignore="VectorDrawableCompat" />
 
     <TextView
