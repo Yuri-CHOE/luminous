@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="BGcolor">#FF034488</color>
     <color name="MainColor">#FFFFFCF6</color>
+    <color name="MyPageBGcolor">#FFFFF5E0</color>
+    <color name="MyPageMenuColor">#FF819DB4</color>
 </resources>
