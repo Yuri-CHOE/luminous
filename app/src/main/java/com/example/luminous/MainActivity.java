@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             Intent intent = new Intent(getApplicationContext(), MyPage.class);
                             intent.putExtra("nickName", account.getDisplayName());
                             intent.putExtra("photoUrl", String.valueOf(account.getPhotoUrl())); //String.valueOf() 특정 자료형을 String 형태로 변환
+                            intent.putExtra("emailTXT",account.getEmail());
                             startActivity(intent);
 
                         } else{ //로그인이 실패했으면...
