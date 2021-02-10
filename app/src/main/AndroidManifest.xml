@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Luminous">
-        <activity android:name=".MyPage"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MyPage"
+                    android:screenOrientation="portrait">   //화면을 세로로 고정
+        </activity>
+        <activity android:name=".MainActivity"
+                    android:screenOrientation="portrait">   //화면을 세로로 고정
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
