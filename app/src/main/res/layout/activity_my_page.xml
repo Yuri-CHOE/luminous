@@ -110,5 +110,25 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_MidleBar"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/iv_calendar_BG"
+        android:layout_width="397dp"
+        android:layout_height="351dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_MenuBG_1"
+        app:srcCompat="@drawable/calendarbg" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="338dp"
+        android:layout_height="337dp"
+        android:background="@color/Transparency"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_calendar_BG"
+        app:layout_constraintEnd_toEndOf="@+id/iv_calendar_BG"
+        app:layout_constraintStart_toStartOf="@+id/iv_calendar_BG"
+        app:layout_constraintTop_toTopOf="@+id/iv_calendar_BG" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
