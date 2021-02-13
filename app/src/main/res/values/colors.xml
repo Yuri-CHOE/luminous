@@ -11,4 +11,5 @@
     <color name="MainColor">#FFFFFCF6</color>
     <color name="MyPageBGcolor">#FFFFF5E0</color>
     <color name="MyPageMenuColor">#FF819DB4</color>
+    <color name="Transparency">#00FF0000</color>
 </resources>
