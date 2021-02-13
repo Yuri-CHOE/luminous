@@ -34,7 +34,7 @@ public class MyPage extends AppCompatActivity {
         String emailTXT = intent.getStringExtra("emailTXT");    //MainActivity로 부터 이메일 전달 받음
 
         tv_nickName = findViewById(R.id.tv_nickName);
-        tv_nickName.setText(nickName+" 님");    //닉네임 text를 텍스트뷰테 세팅
+        tv_nickName.setText(nickName+"님");    //닉네임 text를 텍스트뷰테 세팅
 
         tv_email = findViewById(R.id.tv_email);
         tv_email.setText(emailTXT); //이메일 text를 텍스트뷰테 세팅
