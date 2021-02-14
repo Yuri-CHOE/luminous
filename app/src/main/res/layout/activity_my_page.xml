@@ -130,5 +130,18 @@
         app:layout_constraintStart_toStartOf="@+id/iv_calendar_BG"
         app:layout_constraintTop_toTopOf="@+id/iv_calendar_BG" />
 
+    <ScrollView
+        android:layout_width="413dp"
+        android:layout_height="1224dp"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="59dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
