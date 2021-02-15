@@ -1,134 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="0dp"
+    android:fillViewport="true"
     android:background="@color/MyPageBGcolor"
+    app:layout_constraintEnd_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/constraint_layout_zone"
+    app:layout_constraintBottom_toBottomOf="parent"
     tools:context=".MyPage">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_layout_zone">
 
-    <ImageView
-        android:id="@+id/iv_profileMenu"
-        android:layout_width="fill_parent"
-        android:layout_height="45dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mypagetopbar"
-        tools:ignore="VectorDrawableCompat" />
+        <ImageView
+            android:id="@+id/iv_profileMenu"
+            android:layout_width="411dp"
+            android:layout_height="39dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/mypagetopbar"
+            tools:ignore="VectorDrawableCompat" />
 
-    <ImageView
-        android:id="@+id/iv_MenuBG_1"
-        android:layout_width="379dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profileMenu"
-        app:srcCompat="@drawable/menubg"
-        tools:ignore="VectorDrawableCompat" />
+        <ImageView
+            android:id="@+id/iv_MenuBG_1"
+            android:layout_width="379dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profileMenu"
+            app:srcCompat="@drawable/menubg"
+            tools:ignore="VectorDrawableCompat" />
 
-    <ImageView
-        android:id="@+id/iv_profile"
-        android:layout_width="113dp"
-        android:layout_height="108dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_MenuBG_1"
-        app:layout_constraintStart_toStartOf="@+id/iv_MenuBG_1"
-        app:layout_constraintTop_toTopOf="@+id/iv_MenuBG_1"
-        app:srcCompat="@drawable/profile"
-        tools:ignore="VectorDrawableCompat" />
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="113dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_MenuBG_1"
+            app:layout_constraintStart_toStartOf="@+id/iv_MenuBG_1"
+            app:layout_constraintTop_toTopOf="@+id/iv_MenuBG_1"
+            app:srcCompat="@drawable/profile"
+            tools:ignore="VectorDrawableCompat" />
 
-    <ImageView
-        android:id="@+id/iv_MidleBar"
-        android:layout_width="215dp"
-        android:layout_height="6dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_MenuBG_1"
-        app:layout_constraintStart_toEndOf="@+id/iv_profile"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nickName"
-        app:srcCompat="@drawable/bar"
-        tools:ignore="VectorDrawableCompat" />
+        <ImageView
+            android:id="@+id/iv_MidleBar"
+            android:layout_width="215dp"
+            android:layout_height="6dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_MenuBG_1"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nickName"
+            app:srcCompat="@drawable/bar"
+            tools:ignore="VectorDrawableCompat" />
 
-    <TextView
-        android:id="@+id/tv_nickName"
-        android:layout_width="94dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif"
-        android:text="user 님"
-        android:textColor="@color/BGcolor"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_MenuBG_1"
-        app:layout_constraintStart_toEndOf="@+id/iv_profile"
-        app:layout_constraintTop_toTopOf="@+id/iv_MenuBG_1"
-        app:layout_constraintVertical_bias="0.161" />
+        <TextView
+            android:id="@+id/tv_nickName"
+            android:layout_width="94dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif"
+            android:text="user 님"
+            android:textColor="@color/BGcolor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_MenuBG_1"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toTopOf="@+id/iv_MenuBG_1"
+            app:layout_constraintVertical_bias="0.161" />
 
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="87dp"
-        android:layout_height="36dp"
-        android:text="Logout"
-        android:textColor="@color/MyPageBGcolor"
-        android:textSize="10sp"
-        app:backgroundTint="@color/BGcolor"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_MenuBG_1"
-        app:layout_constraintEnd_toEndOf="@+id/iv_MenuBG_1"
-        app:layout_constraintHorizontal_bias="0.362"
-        app:layout_constraintStart_toEndOf="@+id/tv_nickName"
-        app:layout_constraintTop_toTopOf="@+id/iv_MenuBG_1"
-        app:layout_constraintVertical_bias="0.35" />
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="87dp"
+            android:layout_height="36dp"
+            android:text="Logout"
+            android:textColor="@color/MyPageBGcolor"
+            android:textSize="10sp"
+            app:backgroundTint="@color/BGcolor"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_MenuBG_1"
+            app:layout_constraintEnd_toEndOf="@+id/iv_MenuBG_1"
+            app:layout_constraintHorizontal_bias="0.362"
+            app:layout_constraintStart_toEndOf="@+id/tv_nickName"
+            app:layout_constraintTop_toTopOf="@+id/iv_MenuBG_1"
+            app:layout_constraintVertical_bias="0.35" />
 
-    <Button
-        android:id="@+id/btn_setting"
-        android:layout_width="68dp"
-        android:layout_height="18dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/btnsetting"
-        app:backgroundTint="@color/BGcolor"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_MenuBG_1"
-        app:layout_constraintStart_toStartOf="@+id/tv_email"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="68dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/btnsetting"
+            app:backgroundTint="@color/BGcolor"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_MenuBG_1"
+            app:layout_constraintStart_toStartOf="@+id/tv_email"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email"
+            tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/tv_email"
-        android:layout_width="199dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:text="email"
-        android:textColor="@color/BGcolor"
-        app:layout_constraintEnd_toEndOf="@+id/iv_MenuBG_1"
-        app:layout_constraintStart_toEndOf="@+id/iv_profile"
-        app:layout_constraintTop_toBottomOf="@+id/iv_MidleBar"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="199dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="email"
+            android:textColor="@color/BGcolor"
+            app:layout_constraintEnd_toEndOf="@+id/iv_MenuBG_1"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toBottomOf="@+id/iv_MidleBar"
+            tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/iv_calendar_BG"
-        android:layout_width="397dp"
-        android:layout_height="351dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_MenuBG_1"
-        app:srcCompat="@drawable/calendarbg" />
+        <ImageView
+            android:id="@+id/iv_calendar_BG"
+            android:layout_width="397dp"
+            android:layout_height="351dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_MenuBG_1"
+            app:srcCompat="@drawable/calendarbg" />
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="338dp"
-        android:layout_height="337dp"
-        android:background="@color/Transparency"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_calendar_BG"
-        app:layout_constraintEnd_toEndOf="@+id/iv_calendar_BG"
-        app:layout_constraintStart_toStartOf="@+id/iv_calendar_BG"
-        app:layout_constraintTop_toTopOf="@+id/iv_calendar_BG" />
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="338dp"
+            android:layout_height="337dp"
+            android:background="@color/Transparency"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_calendar_BG"
+            app:layout_constraintEnd_toEndOf="@+id/iv_calendar_BG"
+            app:layout_constraintStart_toStartOf="@+id/iv_calendar_BG"
+            app:layout_constraintTop_toTopOf="@+id/iv_calendar_BG" />
 
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="413dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_calendar_BG"
+            app:srcCompat="@drawable/currentcolorbg" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv_current_color"
+            android:layout_width="76dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:srcCompat="@drawable/currentcolor" />
+
+        <TextView
+            android:id="@+id/tv_current_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="User selection"
+            android:textColor="@color/BGcolor"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/iv_current_color"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="253dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_current_color"
+            app:layout_constraintTop_toBottomOf="@+id/tv_current_color"
+            app:srcCompat="@drawable/barcurrentcolor" />
+
+        <TextView
+            android:id="@+id/tv_current_color_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginBottom="24dp"
+            android:text="#fff520"
+            android:textColor="@color/BGcolor"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
