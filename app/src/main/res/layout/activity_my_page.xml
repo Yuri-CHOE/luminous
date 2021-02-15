@@ -127,7 +127,7 @@
             android:id="@+id/iv_calendar_BG"
             android:layout_width="397dp"
             android:layout_height="351dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_MenuBG_1"
@@ -142,6 +142,66 @@
             app:layout_constraintEnd_toEndOf="@+id/iv_calendar_BG"
             app:layout_constraintStart_toStartOf="@+id/iv_calendar_BG"
             app:layout_constraintTop_toTopOf="@+id/iv_calendar_BG" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="413dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_calendar_BG"
+            app:srcCompat="@drawable/currentcolorbg" />
+
+        <ImageView
+            android:id="@+id/iv_current_color"
+            android:layout_width="76dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:srcCompat="@drawable/currentcolor" />
+
+        <TextView
+            android:id="@+id/tv_current_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="User selection"
+            android:textColor="@color/BGcolor"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/iv_current_color"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="253dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_current_color"
+            app:layout_constraintTop_toBottomOf="@+id/tv_current_color"
+            app:srcCompat="@drawable/barcurrentcolor" />
+
+        <TextView
+            android:id="@+id/tv_current_color_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginBottom="24dp"
+            android:text="#fff520"
+            android:textColor="@color/BGcolor"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
