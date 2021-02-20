@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.SignInButton;
@@ -60,6 +63,20 @@ public class MyPage extends AppCompatActivity {
             }
         };
         btnlogout.setOnClickListener(listener);
+
+        //switch on/off버튼
+        Switch sw = (Switch) findViewById(R.id.switch_on_off);
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast.makeText(getApplicationContext(),"Lamp on",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Lamp off",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
 
