@@ -299,7 +299,7 @@
                 android:id="@+id/calendarView"
                 android:layout_width="338dp"
                 android:layout_height="337dp"
-                android:background="@color/Transparency"
+                android:background="@color/Transparent"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_calendar_BG"
                 app:layout_constraintEnd_toEndOf="@+id/iv_calendar_BG"
                 app:layout_constraintHorizontal_bias="0.474"

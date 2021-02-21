@@ -12,6 +12,8 @@
     <color name="MainColor">#FFFFFCF6</color>   //메인 컬러
     <color name="MyPageBGcolor">#FFFFF5E0</color>   //서브컬러2
     <color name="MyPageMenuColor">#FF819DB4</color> //서브컬러3
+    <color name="Transparent">#00000000</color>    //투명색
+
     //램프 컬러
     <color name="Romantic_day">#FFF8D6D4</color>
     <color name="Good_day">#FFFC887B</color>
