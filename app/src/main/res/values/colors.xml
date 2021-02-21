@@ -7,9 +7,24 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="BGcolor">#FF034488</color>
-    <color name="MainColor">#FFFFFCF6</color>
-    <color name="MyPageBGcolor">#FFFFF5E0</color>
-    <color name="MyPageMenuColor">#FF819DB4</color>
-    <color name="Transparency">#00FF0000</color>
+    //컬러 추가
+    <color name="BGcolor">#FF034488</color> //서브컬러
+    <color name="MainColor">#FFFFFCF6</color>   //메인 컬러
+    <color name="MyPageBGcolor">#FFFFF5E0</color>   //서브컬러2
+    <color name="MyPageMenuColor">#FF819DB4</color> //서브컬러3
+    //램프 컬러
+    <color name="Romantic_day">#FFF8D6D4</color>
+    <color name="Good_day">#FFFC887B</color>
+    <color name="Lively_day">#FF9DE2ED</color>
+    <color name="Gloomy_day">#FF58094F</color>
+    <color name="Refreshing_day">#FFFFF488</color>
+    <color name="Lovely_day">#FFFE87AC</color>
+    <color name="Tiring_day">#FF5E6072</color>
+    <color name="Calm_day">#FF6A847A</color>
+    <color name="Day_to_read_a_book">#FFFFEF92</color>
+    <color name="Passionate_day">#FFD31D0D</color>
+    <color name="Cool_day">#FF00487A</color>
+
+
 </resources>
+
