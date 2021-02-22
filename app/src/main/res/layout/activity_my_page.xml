@@ -219,18 +219,7 @@
                 app:srcCompat="@drawable/currentcolorbg"
                 tools:ignore="MissingConstraints" />
 
-            <ImageView
-                android:id="@+id/iv_calendar_BG"
-                android:layout_width="397dp"
-                android:layout_height="351dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="11dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imv_music"
-                app:srcCompat="@drawable/calendarbg" />
+
 
             <TextView
                 android:id="@+id/tv_current_music"
@@ -295,6 +284,30 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/imv_musicbar" />
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="80dp"
+                android:layout_height="73dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imv_music"
+                app:layout_constraintStart_toStartOf="@+id/imv_music"
+                app:layout_constraintTop_toBottomOf="@+id/imv_lamp"
+                app:srcCompat="@drawable/musicimg" />
+
+            <ImageView
+                android:id="@+id/iv_calendar_BG"
+                android:layout_width="397dp"
+                android:layout_height="351dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="11dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imv_music"
+                app:srcCompat="@drawable/calendarbg" />
+
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="338dp"
@@ -307,16 +320,6 @@
                 app:layout_constraintTop_toTopOf="@+id/iv_calendar_BG"
                 app:layout_constraintVertical_bias="1.0" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="80dp"
-                android:layout_height="73dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/imv_music"
-                app:layout_constraintStart_toStartOf="@+id/imv_music"
-                app:layout_constraintTop_toBottomOf="@+id/imv_lamp"
-                app:srcCompat="@drawable/musicimg" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
