@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ public class MyPage extends AppCompatActivity {
     private ImageView iv_profile; //이미지 뷰
     private Button btn_logout;  //로그아웃 버튼
     private TextView tv_email; //이메일 텍스트
+
+    //램프 컬러 선택창
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +80,8 @@ public class MyPage extends AppCompatActivity {
                 }
             }
         });
+
+        //lamp color optional 코드
     }
 
 
