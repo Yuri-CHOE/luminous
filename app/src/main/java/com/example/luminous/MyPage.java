@@ -1,10 +1,13 @@
 package com.example.luminous;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -26,8 +29,6 @@ public class MyPage extends AppCompatActivity {
     private ImageView iv_profile; //이미지 뷰
     private Button btn_logout;  //로그아웃 버튼
     private TextView tv_email; //이메일 텍스트
-
-    //램프 컬러 선택창
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,11 +83,8 @@ public class MyPage extends AppCompatActivity {
         });
 
         //lamp color optional 코드
+
     }
-
-
-
-
 
 
 }
