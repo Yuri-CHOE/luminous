@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.SignInButton;
@@ -22,6 +26,8 @@ public class MyPage extends AppCompatActivity {
     private ImageView iv_profile; //이미지 뷰
     private Button btn_logout;  //로그아웃 버튼
     private TextView tv_email; //이메일 텍스트
+
+    //램프 컬러 선택창
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +66,22 @@ public class MyPage extends AppCompatActivity {
             }
         };
         btnlogout.setOnClickListener(listener);
+
+        //switch on/off버튼
+        Switch sw = (Switch) findViewById(R.id.switch_on_off);
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast.makeText(getApplicationContext(),"Lamp on",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Lamp off",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        //lamp color optional 코드
     }
 
 
