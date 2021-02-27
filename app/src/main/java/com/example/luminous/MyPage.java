@@ -83,6 +83,14 @@ public class MyPage extends AppCompatActivity {
         });
 
         //lamp color optional 코드
+        Button btn_color = (Button)findViewById(R.id.btn_current_color);
+        btn_color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lamp_color_optional.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

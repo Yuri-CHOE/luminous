@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.luminous">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.luminous" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,17 +11,27 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Luminous">
-        <activity android:name=".MyPage"
-                    android:screenOrientation="portrait">   //화면을 세로로 고정
+        android:theme="@style/Theme.Luminous" >
+        <activity
+            android:name=".lamp_color_optional"
+            android:label="@string/title_activity_lamp_color_optional"
+            android:theme="@style/Theme.Luminous.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".MyPage"
+            android:screenOrientation="portrait" >  //화면을 세로로 고정
         </activity>
         <activity android:name=".MainActivity"
-                    android:screenOrientation="portrait">   //화면을 세로로 고정
+            android:screenOrientation="portrait" >  //화면을 세로로 고정
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".lamp_color_optional"
+            android:screenOrientation="portrait"
+            tools:ignore="DuplicateActivity">       //수정 필요
         </activity>
     </application>
 
