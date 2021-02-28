@@ -15,6 +15,7 @@
         <activity
             android:name=".lamp_color_optional"
             android:label="@string/title_activity_lamp_color_optional"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Luminous.NoActionBar" >
         </activity>
         <activity
@@ -28,10 +29,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".lamp_color_optional"
-            android:screenOrientation="portrait"
-            tools:ignore="DuplicateActivity">       //수정 필요
         </activity>
     </application>
 

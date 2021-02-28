@@ -30,6 +30,9 @@ public class MyPage extends AppCompatActivity {
     private Button btn_logout;  //로그아웃 버튼
     private TextView tv_email; //이메일 텍스트
 
+    //램프 컬러 변경
+    private Button btn_lampcolor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,12 +86,12 @@ public class MyPage extends AppCompatActivity {
         });
 
         //lamp color optional 코드
-        Button btn_color = (Button)findViewById(R.id.btn_current_color);
-        btn_color.setOnClickListener(new View.OnClickListener() {
+        btn_lampcolor = findViewById(R.id.btn_current_color);
+        btn_lampcolor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), lamp_color_optional.class);
-                startActivity(intent);
+                Intent intent = new Intent(MyPage.this, lamp_color_optional.class);
+                startActivity(intent);  //엑티비티 이동
             }
         });
 
