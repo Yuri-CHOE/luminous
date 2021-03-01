@@ -15,16 +15,28 @@ public class lamp_color_optional extends AppCompatActivity {
     private Button btn_color_section_close;
     private Button btn_romantic;
 
+    private String current_color;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lamp_color_optional);
 
+        btn_romantic = findViewById(R.id.btn_romantic);
+        btn_romantic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                current_color = "Romantic";
+            }
+        });
+
         btn_color_section_close = findViewById(R.id.btn_color_section_close);
         btn_color_section_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(lamp_color_optional.this, MyPage.class);
+                intent.putExtra("currentColor", current_color);
+                startActivity(intent);
             }
         });
     }
