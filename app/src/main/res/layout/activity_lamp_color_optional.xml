@@ -11,12 +11,14 @@
     android:orientation="vertical">
 
     <ScrollView
+        android:id="@+id/scroll_color"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="675dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/color_section"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="673dp">
 
             <Button
                 android:id="@+id/btn_romantic"
@@ -158,77 +160,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_day_to_read" />
 
-            <Button
-                android:id="@+id/btn_romantic_color"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Romantic_day"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_Passionate" />
-
-            <Button
-                android:id="@+id/btn_good_color"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Good_day"
-                app:layout_constraintEnd_toStartOf="@+id/btn_lively_color"
-                app:layout_constraintStart_toEndOf="@+id/btn_romantic_color"
-                app:layout_constraintTop_toBottomOf="@+id/btn_cool" />
-
-            <Button
-                android:id="@+id/btn_lively_color"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Lively_day"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_white" />
-
-            <Button
-                android:id="@+id/btn_gloomy_color"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Gloomy_day"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_romantic_color" />
-
-            <Button
-                android:id="@+id/btn_refreshing_color"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Refreshing_day"
-                app:layout_constraintEnd_toStartOf="@+id/btn_calm_color"
-                app:layout_constraintStart_toEndOf="@+id/btn_gloomy_color"
-                app:layout_constraintTop_toBottomOf="@+id/btn_good_color" />
-
-            <Button
-                android:id="@+id/btn_calm_color"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Calm_day"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_lively_color" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
@@ -236,7 +167,7 @@
     <Button
         android:id="@+id/btn_color_section_close"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="10dp"
         android:gravity="center"
         android:text="선택 완료"
