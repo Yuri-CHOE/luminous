@@ -10,168 +10,187 @@
     android:background="@color/MyPageBGcolor"
     android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/scroll_color"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clivk_lamp_color"
         android:layout_width="match_parent"
-        android:layout_height="675dp">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/color_section"
+        <Button
+            android:id="@+id/btn_color_section_close"
+            android:layout_width="74dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="X"
+            android:textColor="@color/BGcolor"
+            android:textSize="60dp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/MyPageBGcolor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Lamp Color"
+            android:textColor="@color/BGcolor"
+            android:textSize="60dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btn_color_set"
+            app:layout_constraintStart_toEndOf="@+id/btn_color_section_close"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_color_set"
+            android:layout_width="74dp"
+            android:layout_height="101dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:backgroundTint="@color/MyPageBGcolor"
+            android:text="√"
+            android:textColor="@color/BGcolor"
+            android:textSize="60dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/lamp_click_color"
             android:layout_width="match_parent"
-            android:layout_height="673dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:srcCompat="@drawable/lampglass"
+            app:tint="@color/Cool_day" />
+
+        <ImageView
+            android:id="@+id/lamp_body"
+            android:layout_width="match_parent"
+            android:layout_height="397dp"
+            android:layout_marginTop="180dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lamp_click_color"
+            app:srcCompat="@drawable/lampbody" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/barcurrentcolor"/>
+"
+
+    <HorizontalScrollView
+        android:id="@+id/color_chart"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_romantic"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Romantic_day"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Romantic_day" />
 
             <Button
-                android:id="@+id/btn_good"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Good_day"
-                app:layout_constraintEnd_toStartOf="@+id/btn_lively"
-                app:layout_constraintStart_toEndOf="@+id/btn_romantic"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/btn_Good"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Good_day" />
 
             <Button
-                android:id="@+id/btn_lively"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Lively_day"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/btn_Lively"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Lively_day" />
 
             <Button
-                android:id="@+id/btn_lovely"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Lovely_day"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_lively" />
+                android:id="@+id/btn_Gloomy"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Gloomy_day" />
 
             <Button
-                android:id="@+id/btn_gloomy"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Gloomy_day"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_romantic" />
+                android:id="@+id/btn_Refreshing"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Refreshing_day" />
 
             <Button
-                android:id="@+id/btn_refreshing"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Refreshing_day"
-                app:layout_constraintEnd_toStartOf="@+id/btn_lovely"
-                app:layout_constraintStart_toEndOf="@+id/btn_gloomy"
-                app:layout_constraintTop_toBottomOf="@+id/btn_good" />
+                android:id="@+id/btn_Lovely"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Lovely_day" />
 
             <Button
-                android:id="@+id/btn_calm"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Calm_day"
-                app:layout_constraintEnd_toStartOf="@+id/btn_day_to_read"
-                app:layout_constraintStart_toEndOf="@+id/btn_tiring"
-                app:layout_constraintTop_toBottomOf="@+id/btn_refreshing" />
+                android:id="@+id/btn_Tiring"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Tiring_day" />
 
             <Button
-                android:id="@+id/btn_tiring"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Tiring_day"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_gloomy" />
+                android:id="@+id/btn_Calm"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Calm_day" />
 
             <Button
-                android:id="@+id/btn_day_to_read"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Day_to_read_a_book"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_lovely" />
+                android:id="@+id/btn_book"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Day_to_read_a_book" />
 
             <Button
                 android:id="@+id/btn_Passionate"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Passionate_day"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_tiring" />
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Passionate_day" />
 
             <Button
-                android:id="@+id/btn_cool"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/Cool_day"
-                app:layout_constraintEnd_toStartOf="@+id/btn_white"
-                app:layout_constraintStart_toEndOf="@+id/btn_Passionate"
-                app:layout_constraintTop_toBottomOf="@+id/btn_calm" />
+                android:id="@+id/btn_Cool"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/Cool_day" />
 
-            <Button
-                android:id="@+id/btn_white"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/currentcolor"
-                app:backgroundTint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_day_to_read" />
+        </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
-
-    <Button
-        android:id="@+id/btn_color_section_close"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:text="선택 완료"
-        android:textStyle="bold"
-        app:backgroundTint="@color/BGcolor" />
+    </HorizontalScrollView>
 
 </LinearLayout>
