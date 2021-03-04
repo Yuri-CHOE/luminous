@@ -94,13 +94,5 @@ public class MyPage extends AppCompatActivity {
                 startActivity(intent);  //엑티비티 이동
             }
         });
-
-        //램프 컬러 변경시
-        String currentColor = intent.getStringExtra("currentColor"); //lamp_color_optional로 부터 선택하 컬러 전달 받음
-        if(currentColor == "Romantic"){
-            btn_lampcolor.setBackgroundResource(R.color.Romantic_day);
-        }
     }
-
-
 }
