@@ -1,6 +1,7 @@
 package com.example.luminous;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -16,6 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Environment;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -59,17 +61,18 @@ public class music_list extends AppCompatActivity {
         }).check();
     }
 
-    public ArrayList<File> findsong(File file){
+    public ArrayList<File> findSong (File file){
         ArrayList<File> arrayList = new ArrayList<>();
 
         File[] files = file.listFiles();
-        for(File singFile : files){
-            if(singFile.isDirectory() && !singFile.isHidden()){
-                arrayList.addAll(findsong((singFile)));
+
+        for(File singleFile: files){
+            if(singleFile.isDirectory() && !singleFile.isHidden()){
+                arrayList.addAll(findSong((singleFile)));
             }
             else{
-                if(singFile.getName().endsWith(".mp3") || singFile.getName().endsWith(".wav")){
-                    arrayList.add(singFile);
+                if(singleFile.getName().endsWith(".mp3") || singleFile.getName().endsWith(".wav")) {
+                    arrayList.add(singleFile);
                 }
             }
         }
@@ -78,13 +81,23 @@ public class music_list extends AppCompatActivity {
     }
 
     void display(){
-        final ArrayList<File> mysong = findsong(Environment.getExternalStorageDirectory());
-        items = new String[mysong.size()];
+        final ArrayList<File> mySong = findSong(Environment.getExternalStorageDirectory());
+        items = new String[mySong.size()];
 
-        for(int i = 0; i < mysong.size();i++){
-            items[i] = mysong.get(i).getName().toString().replace(".mp3", "").replace(".wav","");
+        for(int i = 0; i < mySong.size();i++){
+            items[i] = mySong.get(i).getName().toString().replace(".mp3", "").replace(".wav","");
             ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
             song_listView.setAdapter(myAdapter);
+
+            song_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+
+                    String songName = song_listView.getItemAtPosition(i).toString();
+
+                    startActivity(new Intent(getApplicationContext(), MyPage.class).putExtra("song", mySong).putExtra("songName", songName).putExtra("pos",i));
+                }
+            });
         }
     }
 }
