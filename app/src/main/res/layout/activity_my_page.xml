@@ -219,50 +219,53 @@
                 app:srcCompat="@drawable/currentcolorbg" />
 
 
-
             <TextView
                 android:id="@+id/tv_current_music"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginEnd="200dp"
+                android:layout_marginRight="200dp"
+                android:layout_marginBottom="10dp"
                 android:text="Song Title"
                 android:textColor="@color/BGcolor"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/imv_musicbar"
-                app:layout_constraintStart_toEndOf="@+id/btn_current_song"
-                app:layout_constraintTop_toBottomOf="@+id/imv_lamp" />
+                app:layout_constraintBottom_toTopOf="@+id/seek_musicbar"
+                app:layout_constraintEnd_toEndOf="@+id/imv_music"
+                app:layout_constraintTop_toBottomOf="@+id/imv_lamp"
+                app:layout_constraintVertical_bias="0.64" />
 
-            <ImageView
-                android:id="@+id/imv_musicbar"
-                android:layout_width="253dp"
+            <SeekBar
+                android:id="@+id/seek_musicbar"
+                android:layout_width="265dp"
                 android:layout_height="10dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imv_music"
                 app:layout_constraintEnd_toEndOf="@+id/imv_music"
                 app:layout_constraintStart_toEndOf="@+id/btn_current_song"
-                app:layout_constraintTop_toBottomOf="@+id/imv_lamp"
-                app:srcCompat="@drawable/barcurrentcolor" />
+                app:layout_constraintTop_toBottomOf="@+id/imv_lamp"/>
+
 
             <Button
-                android:id="@+id/btn_play"
+                android:id="@+id/btn_pause"
                 android:layout_width="27dp"
                 android:layout_height="28dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/playmusic"
+                android:background="@drawable/pause"
                 app:backgroundTint="@color/BGcolor"
                 app:layout_constraintBottom_toBottomOf="@+id/imv_music"
-                app:layout_constraintEnd_toStartOf="@+id/btn_fromnowon"
-                app:layout_constraintStart_toEndOf="@+id/btn_back"
-                app:layout_constraintTop_toBottomOf="@+id/imv_musicbar" />
+                app:layout_constraintEnd_toStartOf="@+id/btn_skip_next"
+                app:layout_constraintStart_toEndOf="@+id/btn_skip_previous"
+                app:layout_constraintTop_toBottomOf="@+id/seek_musicbar" />
 
             <Button
-                android:id="@+id/btn_fromnowon"
+                android:id="@+id/btn_skip_next"
                 android:layout_width="27dp"
                 android:layout_height="28dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginBottom="16dp"
@@ -270,20 +273,21 @@
                 app:backgroundTint="@color/BGcolor"
                 app:layout_constraintBottom_toBottomOf="@+id/imv_music"
                 app:layout_constraintEnd_toEndOf="@+id/imv_music"
-                app:layout_constraintTop_toTopOf="@+id/btn_back" />
+                app:layout_constraintTop_toTopOf="@+id/btn_skip_previous" />
 
             <Button
-                android:id="@+id/btn_back"
+                android:id="@+id/btn_skip_previous"
                 android:layout_width="27dp"
                 android:layout_height="28dp"
                 android:layout_marginStart="125dp"
                 android:layout_marginLeft="125dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/backwardmusic"
                 app:backgroundTint="@color/BGcolor"
                 app:layout_constraintBottom_toBottomOf="@+id/imv_music"
                 app:layout_constraintStart_toEndOf="@+id/btn_current_song"
-                app:layout_constraintTop_toBottomOf="@+id/imv_musicbar" />
+                app:layout_constraintTop_toBottomOf="@+id/seek_musicbar" />
 
             <Button
                 android:id="@+id/btn_current_song"
@@ -291,12 +295,13 @@
                 android:layout_height="73dp"
                 android:layout_marginStart="43dp"
                 android:layout_marginLeft="43dp"
-                app:backgroundTint="@color/MyPageBGcolor"
+                android:src="@drawable/musicimg"
+                android:backgroundTint="@color/MyPageBGcolor"
+                android:padding="0dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imv_music"
                 app:layout_constraintStart_toStartOf="@+id/imv_music"
                 app:layout_constraintTop_toBottomOf="@+id/imv_lamp"
-                app:layout_constraintVertical_bias="0.407"
-                app:srcCompat="@drawable/musicimg" />
+                app:layout_constraintVertical_bias="0.407" />
 
             <ImageView
                 android:id="@+id/iv_calendar_BG"

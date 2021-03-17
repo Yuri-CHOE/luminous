@@ -5,14 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +25,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.SignInButton;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.io.File;
+import java.util.ArrayList;
 
 public class MyPage extends AppCompatActivity {
 
@@ -32,6 +40,18 @@ public class MyPage extends AppCompatActivity {
 
     //램프 컬러 변경
     private Button btn_lampcolor;
+
+    //mp3
+    Button btn_next, btn_prev, btn_pause, btn_choose_song;
+    TextView songNameText;
+    SeekBar songSeekBar;
+    String song_name;
+
+    static MediaPlayer myMediaPlayer;
+    int posiotion;
+
+    ArrayList<File> mySongs;
+    Thread updateseekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,8 +110,148 @@ public class MyPage extends AppCompatActivity {
         btn_lampcolor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyPage.this, lamp_color_optional.class);
-                startActivity(intent);  //엑티비티 이동
+                Intent intent_2 = new Intent(MyPage.this, lamp_color_optional.class);
+                startActivity(intent_2);  //엑티비티 이동
+            }
+        });
+
+        //mp3
+
+        btn_next = findViewById(R.id.btn_skip_next);
+        btn_prev = findViewById(R.id.btn_skip_previous);
+        btn_pause = findViewById(R.id.btn_pause);
+        btn_choose_song = findViewById(R.id.btn_current_song);
+
+        songNameText = findViewById(R.id.tv_current_music);
+        songSeekBar = findViewById(R.id.seek_musicbar);
+
+        btn_choose_song.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_3 = new Intent(MyPage.this, music_list.class);
+                startActivity(intent_3);
+
+                getSupportActionBar().setTitle("Now Playing");
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+                updateseekBar = new Thread(){
+                    @Override
+                    public  void run(){
+
+
+                        int totalDuration = myMediaPlayer.getDuration();
+                        int currentPostion = 0;
+
+                        while(currentPostion < totalDuration){
+                            try{
+                                sleep(500);
+                                currentPostion = myMediaPlayer.getCurrentPosition();
+                                songSeekBar.setProgress(currentPostion);
+                            }catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                };
+
+                if(myMediaPlayer != null){
+                    myMediaPlayer.stop();
+                    myMediaPlayer.release();
+                }
+
+                Intent i = getIntent();
+                Bundle bundle = i.getExtras();
+
+                mySongs = (ArrayList)bundle.getParcelableArrayList("songs");
+                song_name = mySongs.get(posiotion).getName().toString();
+
+                String songName = i.getStringExtra("songName");
+
+                songNameText.setText(songName);
+                songNameText.setSelected(true);
+
+                posiotion = bundle.getInt("pos" ,0);
+
+                Uri u = Uri.parse(mySongs.get(posiotion).toString());
+
+                myMediaPlayer = MediaPlayer.create(getApplicationContext(), u);
+                myMediaPlayer.start();;
+                songSeekBar.setMax(myMediaPlayer.getDuration());
+
+                updateseekBar.start();
+            }
+        });
+
+
+        songSeekBar.getProgressDrawable().setColorFilter(getResources().getColor(R.color.BGcolor), PorterDuff.Mode.MULTIPLY);
+        songSeekBar.getThumb().setColorFilter(getResources().getColor(R.color.MyPageBGcolor), PorterDuff.Mode.SRC_IN);
+
+        songSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                myMediaPlayer.seekTo(seekBar.getProgress());
+            }
+        });
+
+        btn_pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                songSeekBar.setMax(myMediaPlayer.getDuration());
+
+                if(myMediaPlayer.isPlaying()){
+                    btn_pause.setBackgroundResource(R.drawable.playmusic);
+                    myMediaPlayer.pause();
+                }else{
+                    btn_pause.setBackgroundResource(R.drawable.pause);
+                    myMediaPlayer.start();
+                }
+            }
+        });
+
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myMediaPlayer.stop();
+                myMediaPlayer.release();
+                posiotion = ((posiotion+1)%mySongs.size());
+
+                Uri u = Uri.parse(mySongs.get(posiotion).toString());
+                myMediaPlayer = MediaPlayer.create(getApplicationContext(), u);
+
+                song_name = mySongs.get(posiotion).getName().toString();
+                songNameText.setText(song_name);
+
+                myMediaPlayer.stop();
+            }
+        });
+
+        btn_prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myMediaPlayer.stop();
+                myMediaPlayer.release();
+
+                posiotion = (posiotion-1 < 0) ? (mySongs.size()-1) : (posiotion-1);
+
+                Uri u = Uri.parse(mySongs.get(posiotion).toString());
+                myMediaPlayer = MediaPlayer.create(getApplicationContext(), u);
+
+                song_name = mySongs.get(posiotion).getName().toString();
+                songNameText.setText(song_name);
+
+                myMediaPlayer.stop();
             }
         });
     }

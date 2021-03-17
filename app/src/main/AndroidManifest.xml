@@ -4,6 +4,7 @@
     package="com.example.luminous" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -12,6 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Luminous" >
+        <activity
+            android:name=".music_list"
+            android:label="@string/title_activity_music_list"
+            android:theme="@style/Theme.Luminous.NoActionBar" >
+        </activity>
         <activity
             android:name=".lamp_color_optional"
             android:label="@string/title_activity_lamp_color_optional"
@@ -22,7 +28,8 @@
             android:name=".MyPage"
             android:screenOrientation="portrait" >  //화면을 세로로 고정
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait" >  //화면을 세로로 고정
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
