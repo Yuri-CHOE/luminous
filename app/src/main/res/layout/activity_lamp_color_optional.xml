@@ -206,6 +206,14 @@
                 android:background="@drawable/colorchart"
                 app:backgroundTint="@color/purple_200" />
 
+            <Button
+                android:id="@+id/btn_purple_500"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/purple_500" />
+
         </LinearLayout>
 
     </HorizontalScrollView>
