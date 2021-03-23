@@ -222,6 +222,14 @@
                 android:background="@drawable/colorchart"
                 app:backgroundTint="@color/purple_700" />
 
+            <Button
+                android:id="@+id/btn_white"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/colorchart"
+                app:backgroundTint="@color/white" />
+
         </LinearLayout>
 
     </HorizontalScrollView>
