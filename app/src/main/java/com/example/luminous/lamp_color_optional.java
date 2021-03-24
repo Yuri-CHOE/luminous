@@ -14,11 +14,17 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class lamp_color_optional extends AppCompatActivity {
 
     //램프컬러 변경 확인
     private ImageView select_color;
+
+    private TextView color_name;
+    private TextView color_name_code;
+    private Button btn_back;
+    private Button btn_set;
 
     private Button btn_romantic;
     private Button btn_Good;
@@ -28,27 +34,29 @@ public class lamp_color_optional extends AppCompatActivity {
     private Button btn_Lovely;
     private Button btn_Tiring;
     private Button btn_Calm;
-    private Button btn_book;
     private Button btn_Passionate;
     private Button btn_Cool;
 
     //private Button btn_color_section_close;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lamp_color_optional);
 
-        // 색상 선택
 
+        // 색상 선택
         select_color = findViewById(R.id.lamp_click_color);
+        color_name = findViewById(R.id.color_name);
+        color_name_code = findViewById(R.id.tv_current_color_code);
 
         btn_romantic = findViewById(R.id.btn_romantic);
         btn_romantic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#F8D6D4"));
+                color_name.setText("Romantic_day");
+                color_name_code.setText("#F8D6D4");
             }
         });
 
@@ -57,6 +65,8 @@ public class lamp_color_optional extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#FC887B"));
+                color_name.setText("Good_day");
+                color_name_code.setText("#FC887B");
             }
         });
 
@@ -65,7 +75,8 @@ public class lamp_color_optional extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#9DE2ED"));
-
+                color_name.setText("Lively_day");
+                color_name_code.setText("#9DE2ED");
             }
         });
 
@@ -74,6 +85,8 @@ public class lamp_color_optional extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#58094F"));
+                color_name.setText("Gloomy_day");
+                color_name_code.setText("#58094F");
             }
         });
 
@@ -82,6 +95,8 @@ public class lamp_color_optional extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#FFF488"));
+                color_name.setText("Refreshing_day");
+                color_name_code.setText("#FFF488");
             }
         });
 
@@ -90,6 +105,8 @@ public class lamp_color_optional extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#FE87AC"));
+                color_name.setText("Lovely_day");
+                color_name_code.setText("#FE87AC");
             }
         });
 
@@ -98,6 +115,8 @@ public class lamp_color_optional extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#5E6072"));
+                color_name.setText("Tiring_day");
+                color_name_code.setText("#5E6072");
             }
         });
 
@@ -106,14 +125,8 @@ public class lamp_color_optional extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#6A847A"));
-            }
-        });
-
-        btn_book = findViewById(R.id.btn_book);
-        btn_book.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                select_color.setColorFilter(Color.parseColor("#FFEF92"));
+                color_name.setText("Calm_day");
+                color_name_code.setText("#6A847A");
             }
         });
 
@@ -122,6 +135,8 @@ public class lamp_color_optional extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#D31D0D"));
+                color_name.setText("Passionate_day");
+                color_name_code.setText("#D31D0D");
             }
         });
 
@@ -130,7 +145,29 @@ public class lamp_color_optional extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 select_color.setColorFilter(Color.parseColor("#00487A"));
+                color_name.setText("Cool_day");
+                color_name_code.setText("#00487A");
+            }
+        });
+
+        btn_back = findViewById(R.id.btn_color_section_close);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        btn_set = findViewById(R.id.btn_color_set);
+        btn_set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_color = new Intent(lamp_color_optional.this, MyPage.class);
+                intent_color.putExtra("set_color", color_name.getText());
+                intent_color.putExtra("set_color_code", color_name_code.getText());
+                startActivity(intent_color);
             }
         });
     }
+
 }
