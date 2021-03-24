@@ -151,7 +151,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="32dp"
-                android:text="User selection"
+                android:text="Select Color"
                 android:textColor="@color/BGcolor"
                 android:textSize="15dp"
                 android:textStyle="bold"

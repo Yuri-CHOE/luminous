@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -40,6 +42,8 @@ public class MyPage extends AppCompatActivity {
 
     //램프 컬러 변경
     private Button btn_lampcolor;
+    private TextView tv_current_color_number;
+    private TextView tv_current_color;
 
     //mp3
     Button btn_next, btn_prev, btn_pause, btn_choose_song;
@@ -52,6 +56,11 @@ public class MyPage extends AppCompatActivity {
 
     ArrayList<File> mySongs;
     Thread updateseekBar;
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +116,11 @@ public class MyPage extends AppCompatActivity {
 
         //lamp color optional 코드
         btn_lampcolor = findViewById(R.id.btn_current_color);
+        tv_current_color_number = findViewById(R.id.tv_current_color_number);
+        tv_current_color = findViewById(R.id.tv_current_color);
+        String set_color = "Select Color";
+        String set_color_code = "#FFFFFF";
+
         btn_lampcolor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +128,15 @@ public class MyPage extends AppCompatActivity {
                 startActivity(intent_2);  //엑티비티 이동
             }
         });
+        Intent intent_color = getIntent();
+        set_color = intent_color.getStringExtra("set_color");
+        set_color_code = intent_color.getStringExtra("set_color_code");
+        tv_current_color.setText(set_color);
+        tv_current_color_number.setText(set_color_code);
+        //btn_lampcolor.setBackgroundColor(Color.parseColor(set_color_code));
+
+
+
 
         //mp3
 

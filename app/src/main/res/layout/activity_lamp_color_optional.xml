@@ -90,6 +90,67 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/lamp_click_color" />
 
+        <TextView
+            android:id="@+id/color_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="16dp"
+            android:text="Select Color"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lamp_body" />
+
+        <TextView
+            android:id="@+id/tv_opening_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:text="("
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/color_name"
+            app:layout_constraintTop_toBottomOf="@+id/lamp_body" />
+
+        <TextView
+            android:id="@+id/tv_current_color_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tv_opening_p"
+            app:layout_constraintTop_toBottomOf="@+id/lamp_body" />
+
+        <TextView
+            android:id="@+id/tv_closing_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="36dp"
+            android:text=")"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_current_color_code"
+            app:layout_constraintTop_toBottomOf="@+id/lamp_body" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
@@ -97,8 +158,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/barcurrentcolor"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"/>
-"
+        android:layout_marginBottom="5dp"/>
 
     <HorizontalScrollView
         android:id="@+id/color_chart"
@@ -175,14 +235,6 @@
                 app:backgroundTint="@color/Calm_day" />
 
             <Button
-                android:id="@+id/btn_book"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/colorchart"
-                app:backgroundTint="@color/Day_to_read_a_book" />
-
-            <Button
                 android:id="@+id/btn_Passionate"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -197,30 +249,6 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/colorchart"
                 app:backgroundTint="@color/Cool_day" />
-
-            <Button
-                android:id="@+id/btn_purple_200"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/colorchart"
-                app:backgroundTint="@color/purple_200" />
-
-            <Button
-                android:id="@+id/btn_purple_500"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/colorchart"
-                app:backgroundTint="@color/purple_500" />
-
-            <Button
-                android:id="@+id/btn_purple_700"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/colorchart"
-                app:backgroundTint="@color/purple_700" />
 
         </LinearLayout>
 
