@@ -135,9 +135,6 @@ public class MyPage extends AppCompatActivity {
         tv_current_color_number.setText(set_color_code);
         //btn_lampcolor.setBackgroundColor(Color.parseColor(set_color_code));
 
-
-
-
         //mp3
 
         btn_next = findViewById(R.id.btn_skip_next);
