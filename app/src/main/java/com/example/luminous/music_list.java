@@ -24,6 +24,7 @@ import android.widget.ListView;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 public class music_list extends AppCompatActivity {
 
@@ -36,31 +37,21 @@ public class music_list extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_list);
 
-        song_listView = findViewById(R.id.song_listView);
+        song_listView = (ListView)findViewById(R.id.song_listView);
+        List<String> data = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, data);
+        song_listView.setAdapter(adapter);
 
-        runtimePermission();
-
+        File fp = new File("C:\\Users\\user\\AndroidStudioProjects\\Luminous\\app\\src\\main\\res\\raw\\");
+        if(fp.exists() == false){
+            return;
+        }
+        File[] files = fp.listFiles();
+        for(int i = 0; i < files.length; i++){
+            if(!files[i].isHidden() && files[i].isFile()){
+                data.add(files[i].getName());
+            }
+        }
+        adapter.notifyDataSetChanged();
     }
-
-    public void runtimePermission(){
-        Dexter.withActivity(this).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE).withListener(new PermissionListener() {
-            @Override
-            public void onPermissionGranted(PermissionGrantedResponse response)
-            {
-            }
-
-            @Override
-            public void onPermissionDenied(PermissionDeniedResponse response) {
-
-            }
-
-            @Override
-            public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-
-                token.continuePermissionRequest();
-
-            }
-        }).check();
-    }
-
 }
