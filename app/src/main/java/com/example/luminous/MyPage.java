@@ -145,134 +145,13 @@ public class MyPage extends AppCompatActivity {
         songNameText = findViewById(R.id.tv_current_music);
         songSeekBar = findViewById(R.id.seek_musicbar);
 
-        btn_choose_song.setOnClickListener(new View.OnClickListener() {
+        btn_choose_song.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent_3 = new Intent(MyPage.this, music_list.class);
-                startActivity(intent_3);
-
-                getSupportActionBar().setTitle("Now Playing");
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-                updateseekBar = new Thread(){
-                    @Override
-                    public  void run(){
-
-
-                        int totalDuration = myMediaPlayer.getDuration();
-                        int currentPostion = 0;
-
-                        while(currentPostion < totalDuration){
-                            try{
-                                sleep(500);
-                                currentPostion = myMediaPlayer.getCurrentPosition();
-                                songSeekBar.setProgress(currentPostion);
-                            }catch (InterruptedException e){
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                };
-
-                if(myMediaPlayer != null){
-                    myMediaPlayer.stop();
-                    myMediaPlayer.release();
-                }
-
-                Intent i = getIntent();
-                Bundle bundle = i.getExtras();
-
-                mySongs = (ArrayList)bundle.getParcelableArrayList("songs");
-                song_name = mySongs.get(posiotion).getName().toString();
-
-                String songName = i.getStringExtra("songName");
-
-                songNameText.setText(songName);
-                songNameText.setSelected(true);
-
-                posiotion = bundle.getInt("pos" ,0);
-
-                Uri u = Uri.parse(mySongs.get(posiotion).toString());
-
-                myMediaPlayer = MediaPlayer.create(getApplicationContext(), u);
-                myMediaPlayer.start();;
-                songSeekBar.setMax(myMediaPlayer.getDuration());
-
-                updateseekBar.start();
+                startActivity(intent_3);  //엑티비티 이동
             }
         });
 
-
-        songSeekBar.getProgressDrawable().setColorFilter(getResources().getColor(R.color.BGcolor), PorterDuff.Mode.MULTIPLY);
-        songSeekBar.getThumb().setColorFilter(getResources().getColor(R.color.MyPageBGcolor), PorterDuff.Mode.SRC_IN);
-
-        songSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                myMediaPlayer.seekTo(seekBar.getProgress());
-            }
-        });
-
-        btn_pause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                songSeekBar.setMax(myMediaPlayer.getDuration());
-
-                if(myMediaPlayer.isPlaying()){
-                    btn_pause.setBackgroundResource(R.drawable.playmusic);
-                    myMediaPlayer.pause();
-                }else{
-                    btn_pause.setBackgroundResource(R.drawable.pause);
-                    myMediaPlayer.start();
-                }
-            }
-        });
-
-        btn_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myMediaPlayer.stop();
-                myMediaPlayer.release();
-                posiotion = ((posiotion+1)%mySongs.size());
-
-                Uri u = Uri.parse(mySongs.get(posiotion).toString());
-                myMediaPlayer = MediaPlayer.create(getApplicationContext(), u);
-
-                song_name = mySongs.get(posiotion).getName().toString();
-                songNameText.setText(song_name);
-
-                myMediaPlayer.stop();
-            }
-        });
-
-        btn_prev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myMediaPlayer.stop();
-                myMediaPlayer.release();
-
-                posiotion = (posiotion-1 < 0) ? (mySongs.size()-1) : (posiotion-1);
-
-                Uri u = Uri.parse(mySongs.get(posiotion).toString());
-                myMediaPlayer = MediaPlayer.create(getApplicationContext(), u);
-
-                song_name = mySongs.get(posiotion).getName().toString();
-                songNameText.setText(song_name);
-
-                myMediaPlayer.stop();
-            }
-        });
     }
 }
