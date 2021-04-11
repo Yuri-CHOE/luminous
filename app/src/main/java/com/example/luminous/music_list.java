@@ -37,21 +37,5 @@ public class music_list extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_list);
 
-        song_listView = (ListView)findViewById(R.id.song_listView);
-        List<String> data = new ArrayList<>();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, data);
-        song_listView.setAdapter(adapter);
-
-        File fp = new File("C:\\Users\\user\\AndroidStudioProjects\\Luminous\\app\\src\\main\\res\\raw\\");
-        if(fp.exists() == false){
-            return;
-        }
-        File[] files = fp.listFiles();
-        for(int i = 0; i < files.length; i++){
-            if(!files[i].isHidden() && files[i].isFile()){
-                data.add(files[i].getName());
-            }
-        }
-        adapter.notifyDataSetChanged();
     }
 }
