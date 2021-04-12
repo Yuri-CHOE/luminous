@@ -293,15 +293,15 @@
                 android:id="@+id/btn_current_song"
                 android:layout_width="80dp"
                 android:layout_height="73dp"
-                android:layout_marginStart="43dp"
-                android:layout_marginLeft="43dp"
-                android:src="@drawable/musicimg"
+                android:layout_marginStart="72dp"
+                android:layout_marginLeft="72dp"
                 android:backgroundTint="@color/MyPageBGcolor"
                 android:padding="0dp"
+                android:src="@drawable/musicimg"
                 app:layout_constraintBottom_toBottomOf="@+id/imv_music"
                 app:layout_constraintStart_toStartOf="@+id/imv_music"
                 app:layout_constraintTop_toBottomOf="@+id/imv_lamp"
-                app:layout_constraintVertical_bias="0.407" />
+                app:layout_constraintVertical_bias="0.521" />
 
             <ImageView
                 android:id="@+id/iv_calendar_BG"
@@ -327,6 +327,17 @@
                 app:layout_constraintStart_toStartOf="@+id/iv_calendar_BG"
                 app:layout_constraintTop_toTopOf="@+id/iv_calendar_BG"
                 app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="76dp"
+                android:layout_height="77dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_calendar_BG"
+                app:srcCompat="@drawable/btn_alarm" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
