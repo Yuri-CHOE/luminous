@@ -20,7 +20,7 @@ public class lamp_color_optional extends AppCompatActivity {
 
     //램프컬러 변경 확인
     private ImageView select_color;
-
+    
     private TextView color_name;
     private TextView color_name_code;
     private Button btn_back;
